@@ -49,12 +49,11 @@ public class DaoImplHibernate implements IDao {
 		return query.list();
 	}
 
-	public User listerParNom(String nom) {
+	public List<User> listerParNom(String nom) {
 		String req = "from User as u where u.nom like:lenom";
 		Query query = getSession().createQuery(req);
 		query.setParameter("lenom", nom);
-		query.setMaxResults(1);
-		return (User) query.uniqueResult();
+		return  (List<User>) query.uniqueResult();
 	}
 
 }
