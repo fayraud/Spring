@@ -14,8 +14,11 @@ public class Lanceur {
 		// 2- récuperation d'un bean
 		IService iService= (IService) appContext.getBean("serviceImpl");
 		User u = (User) appContext.getBean("user");
+		u.setNom("toto");
+		User u2 = (User) appContext.getBean("user");
 		// 3- traitement
-		iService.ajouterUser(u);
+		System.out.println(u);
+		System.out.println(u2);
 		// 4- detruire le context
 		appContext.close();
 
