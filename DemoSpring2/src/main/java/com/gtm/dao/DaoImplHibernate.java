@@ -2,40 +2,59 @@ package com.gtm.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.gtm.metier.User;
+
+@Transactional
 @Repository
 public class DaoImplHibernate implements IDao {
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	private Session getSession(){
+		return sessionFactory.getCurrentSession();
+	}
+
 
 	public void ajouterUser(User u) {
-		// TODO Auto-generated method stub
-		System.out.println("ajouter a partir de Hibernet");
+		getSession().save(u);
 	}
 
 	public List<User> listerUser() {
-		// TODO Auto-generated method stub
-		return null;
+		String req = "from User";
+		Query query = getSession().createQuery(req);
+		return query.list();
 	}
 
 	public void supprimerUser(long id) {
-		// TODO Auto-generated method stub
+		getSession().delete(trouverUser(id));
 
 	}
 
 	public User trouverUser(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (User) getSession().get(User.class, id);
+		 
 	}
 
 	public List<User> listerParMC(String nom) {
-		// TODO Auto-generated method stub
-		return null;
+		String req = "from User as u where u.nom like:lenom";
+		Query query = getSession().createQuery(req);
+		query.setParameter("lenom", "%"+nom+"%");
+		return query.list();
 	}
 
-	public List<User> listerParNom(String nom) {
-		// TODO Auto-generated method stub
-		return null;
+	public User listerParNom(String nom) {
+		String req = "from User as u where u.nom like:lenom";
+		Query query = getSession().createQuery(req);
+		query.setParameter("lenom", nom);
+		query.setMaxResults(1);
+		return (User) query.uniqueResult();
 	}
 
 }

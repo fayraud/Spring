@@ -13,8 +13,8 @@ public class ServiceImpl implements IService {
 	
 	
 	@Autowired
-//	@Qualifier("daoImplHibernate")
-	@Qualifier("daoImplJPA")
+	@Qualifier("daoImplHibernate")
+//	@Qualifier("daoImplJPA")
 	private IDao dao;
 	
 	
@@ -24,28 +24,28 @@ public class ServiceImpl implements IService {
 	}
 
 	public List<User> listerUser() {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.listerUser();
+		 
 	}
 
 	public void supprimerUser(long id) {
-		// TODO Auto-generated method stub
+		dao.supprimerUser(id);
 
 	}
 
 	public User trouverUser(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return dao.trouverUser(id);
 	}
 
 	public List<User> listerParMC(String nom) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.listerParMC(nom);
 	}
 
-	public List<User> listerParNom(String nom) {
+	public User listerParNom(String nom) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.listerParNom(nom);
 	}
 
 }
