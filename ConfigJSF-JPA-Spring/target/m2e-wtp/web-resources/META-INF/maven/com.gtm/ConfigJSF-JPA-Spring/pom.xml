@@ -7,6 +7,11 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>ConfigJSF-JPA-Spring Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source> <!-- Version du JRE en developpement -->
+		<maven.compiler.target>1.8</maven.compiler.target> <!-- Version JRE en prod -->
+	</properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
