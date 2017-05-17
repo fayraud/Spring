@@ -19,8 +19,8 @@ public class Lanceur {
 		u.setPrenom("test");
 
 		// 3- traitement
-		iService.ajouterUser(u);
-		iService.supprimerUser(26);
+//		iService.ajouterUser(u);
+//		iService.supprimerUser(27);
 //		System.out.println(iService.listerUser());
 //		System.out.println(iService.trouverUser(24));
 //		System.out.println(iService.listerParNom("Ayraud"));

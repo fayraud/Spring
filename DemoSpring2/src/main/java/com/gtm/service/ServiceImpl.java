@@ -11,7 +11,6 @@ import com.gtm.dao.IDao;
 import com.gtm.dao.springdata.UserRepository;
 import com.gtm.metier.User;
 @Service
-@Transactional
 public class ServiceImpl implements IService {
 	
 	

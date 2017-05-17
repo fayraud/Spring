@@ -78,5 +78,5 @@
     </bean>
 <!--     fin config JPA -->
 <!-- config sping data -->
-<jpa:repositories base-package="com.gtm.dao.springdata"/>
+<jpa:repositories base-package="com.gtm.dao.springdata" entity-manager-factory-ref="entityManagerFactory" transaction-manager-ref="transactionManagerJPA"/>
 </beans>
