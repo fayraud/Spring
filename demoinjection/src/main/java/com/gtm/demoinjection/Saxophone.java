@@ -4,7 +4,7 @@ public class Saxophone implements Instrument {
 
 	@Override
 	public void jouer() {
-		System.out.println("SAXOPHONE");
+		System.out.println("SAXOPHONE dit: do re mi fa sol");
 	}
 
 	@Override

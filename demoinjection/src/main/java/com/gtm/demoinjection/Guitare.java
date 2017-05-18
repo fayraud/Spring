@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class Guitare implements Instrument {
 
 	public void jouer() {
-		System.out.println("GUITARE");
+		System.out.println("GUITARE dit: do re mi fa sol");
 	}
 
 	@Override

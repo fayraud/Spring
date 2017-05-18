@@ -3,7 +3,7 @@ package com.gtm.demoinjection;
 public class Piano implements Instrument {
 
 	public void jouer() {
-		System.out.println("PIA PIA PIANO...");
+		System.out.println("PIANO dit: do re mi fa sol");
 	}
 
 }
