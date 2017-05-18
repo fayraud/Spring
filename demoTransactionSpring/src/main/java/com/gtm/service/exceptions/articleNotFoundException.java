@@ -1,5 +1,5 @@
 package com.gtm.service.exceptions;
 
-public class articleNotFoundException {
+public class articleNotFoundException extends Exception{
 
 }

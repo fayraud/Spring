@@ -1,5 +1,5 @@
 package com.gtm.service.exceptions;
 
-public class NotEnoughArticleException {
+public class NotEnoughArticleException extends Exception {
 
 }
