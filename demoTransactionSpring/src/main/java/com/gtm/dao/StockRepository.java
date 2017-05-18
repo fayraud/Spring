@@ -12,6 +12,6 @@ public interface StockRepository extends JpaRepository<Stock, Integer> {
 	
 	@Modifying
 	@Query("update Stock s set s.quantite=s.quantite-?2 where s.id=?1")
-	Void sortArcticleDuStock(int id, int qute);
+	public void sortArticleDuStock(int id, int qute);
 	
 }

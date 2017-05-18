@@ -40,14 +40,28 @@
     </bean>
     
     <!-- CONFIG SPRING DATA -->
-    <jpa:repositories base-package="com.huios.dao" entity-manager-factory-ref="entityManagerFactory" transaction-manager-ref="transactionManagerJPA"/>
+    <jpa:repositories base-package="com.gtm.dao" entity-manager-factory-ref="entityManagerFactory" transaction-manager-ref="transactionManagerJPA"/>
     
 	<!-- pour utiliser les annotations spring -->
 	<context:annotation-config />
 	<!-- package contenant les classes annotées spring -->
-	<context:component-scan base-package="com.huios" />
+	<context:component-scan base-package="com.gtm" />
 
 		<!-- prise en compte du gestionnaire de transaction pour @Transactional -->
 	<tx:annotation-driven transaction-manager="transactionManagerJPA"/>
+	
+<!-- 	mise en place d'un intercepteur spring pour la gestion des transactions -->
+
+<!-- <tx:advice id="txAdvice" transaction-manager="transactionManagerJPA"> -->
+<!-- 	<tx:attributes> -->
+<!-- 		<tx:method name="getQtyEnStock"/> -->
+<!-- 		<tx:method name="sortArticleDuStock"/> -->
+<!-- 	</tx:attributes> -->
+<!-- </tx:advice> -->
+
+<!-- <aop:config> -->
+<!-- <aop:pointcut expression="execution(* com.gtm.service.ServiceImpl.*(..))" id="stockServiceOperation"/> -->
+<!-- <aop:advisor advice-ref="txAdvice" pointcut-ref="stockServiceOperation"/> -->
+<!-- </aop:config> -->
 
 </beans>

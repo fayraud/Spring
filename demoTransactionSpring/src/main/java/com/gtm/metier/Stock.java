@@ -16,7 +16,7 @@ public class Stock {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String nom;
-	private int quantité;
+	private int quantite;
 
 	public int getId() {
 		return id;
@@ -34,12 +34,12 @@ public class Stock {
 		this.nom = nom;
 	}
 
-	public int getQuantité() {
-		return quantité;
+	public int getQuantite() {
+		return quantite;
 	}
 
-	public void setQuantité(int quantité) {
-		this.quantité = quantité;
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
 	}
 
 }

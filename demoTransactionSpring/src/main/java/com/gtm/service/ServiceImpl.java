@@ -25,10 +25,10 @@ public class ServiceImpl implements IService {
 		if (!stockRepository.exists(id)) {
 			throw new articleNotFoundException();
 		}
-		if (stockRepository.findOne(id).getQuantité() < qute) {
+		if (stockRepository.findOne(id).getQuantite() < qute) {
 			throw new NotEnoughArticleException();
 		}
-		stockRepository.sortArcticleDuStock(id, qute);
+		stockRepository.sortArticleDuStock(id, qute);
 
 	}
 
@@ -37,7 +37,7 @@ public class ServiceImpl implements IService {
 		if (!stockRepository.exists(id)) {
 			throw new articleNotFoundException();
 		}
-		return stockRepository.findOne(id).getQuantité();
+		return stockRepository.findOne(id).getQuantite();
 	}
 
 
